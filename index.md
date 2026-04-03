@@ -1,6 +1,6 @@
---
+---
 id: summary
---
+---
 ## Summary
 
 Technical content professional with over a decade of experience spanning documentation, developer advocacy, and project management.
