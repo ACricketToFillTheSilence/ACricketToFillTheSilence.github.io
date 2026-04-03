@@ -1,7 +1,7 @@
 .container {
     overflow: hidden;
 }
-	.sidebar,.content{
+	.sidebar{
 		background: #333;
 		color: #fff;
 		height: 500px;
