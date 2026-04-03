@@ -1,10 +1,33 @@
 @import "{{ site.theme }}";
 
+.container {
+  display: flex;
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
 .sidebar {
-  float: left;
-  width: 15%;
+  flex: 0 0 15%;
+  padding-right: 2rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar a {
+  display: block;
+  padding: 0.5rem 0;
+  color: #157878;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
 }
 
 .main-content {
-  margin-left: 15%;
+  flex: 1;
 }
