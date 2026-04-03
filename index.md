@@ -1,8 +1,4 @@
-# Richelle Herrli Portfolio
-
-## Summary
-
-Technical content professional with over a decade of experience spanning documentation, developer advocacy, and project management.
+I'm a technical content professional with over a decade of experience spanning documentation, developer advocacy, and project management.
 My work bridges the gap between technology and developers by collaborating with cross-functional teams, identifying developer pain points, and delivering clear, actionable documentation.
 
 ## Writing samples
