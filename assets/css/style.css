@@ -3,18 +3,14 @@
 
 @import "{{ site.theme }}";
 .container {
-  display: flex;
-  max-width: 64rem;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-  min-height: 100%;
+  overflow: hidden;
 }
 
-.sidebar {
-  flex: 0;
-  padding-right: 2rem;
-}
-
+.sidebar{
+	width: 300px;
+	float: left;
+	position: absolute;
+	}
 .sidebar ul {
   list-style: none;
   padding: 0;
@@ -32,5 +28,5 @@
 }
 
 .main-content {
-  flex: 1;
+  width: 630px;
 }
