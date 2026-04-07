@@ -10,7 +10,7 @@
 }
 
 .sidebar{
-	/*width: 200px;*/
+	width: 200px;
 	order:1;
 
 	.sidebar ul {
@@ -30,6 +30,6 @@
 	}
 }
 .primary-content {
-  /*width: 630px;*/
+  width: 630px;
 	order: 2;
 }
