@@ -11,6 +11,7 @@
 
 .sidebar{
 	/*width: 200px;*/
+	order:1;
 
 	.sidebar ul {
   		list-style: none;
@@ -28,8 +29,7 @@
   		text-decoration: underline;
 	}
 }
-/*
 .primary-content {
-  width: 630px;
+  /*width: 630px;*/
+	order: 2;
 }
-*/
