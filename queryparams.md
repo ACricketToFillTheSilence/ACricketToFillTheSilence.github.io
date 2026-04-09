@@ -1,6 +1,4 @@
-# Removing Auth Tokens from URL Parameters
-
-## High-Level Description
+## Removing Auth Tokens from URL Parameters
 
 The way that API calls are authenticated is changing on 31 Jan 2022. 
 Placing auth tokens in the URL parameters pose a significant security risk. 
@@ -10,7 +8,7 @@ As they do so, they will need to move any client-side API calls to become server
 
 This high-level view will be unpacked below.
 
-## Background
+### Background
 
 When a third-party developer sends in a request for data, they do so using JSON files. The HTTP for JSON includes many things; the two important elements here are the body and the header.
 
@@ -69,10 +67,10 @@ If the developer decided that they'd rather send in the auth token using a URL p
 https://apisandbox.dev.clover.com/v3/merchants/<<merchantUuid>>/customers/?access_token=<<authToken>>
 ```
 
-## Security Concerns
+### Security Concerns
 
 For security reasons, Fiserv is requiring that we remove auth tokens from URL parameters. 
-We will no longer allow URL parameter authentication because it gives too much information away for comfort. 
+We will no longer allow URL parameter authentication because it gives too much information. 
 Because our auth tokens include
 
 * information about the app,
@@ -85,51 +83,51 @@ We sent out a communication on 30 Jul 2021 informing developers of the coming ch
 Any devs making calls with URL parameters will need to update their calls so that they use Auth headers by 31 Jan 2022. 
 We have given them six months' warning to prepare for this change.
 
-## CORS Conflict
+### CORS Conflict
 
 When we first scoped this project, we ran into an issue with CORS: developers who used CORS would be unable to use Authorization headers and would therefore be put in a no-win situation. 
 We addressed this issue and Authorization headers should now work in conjunction with CORS.
 
-## Developer FAQs
+### Developer FAQs
 
-### Why is Clover removing the access_token query parameter option?
+#### Why is Clover removing the `access_token` query parameter option?
 Authorization via URL query parameter can be riskier from a security standpoint. URLs are more public than headers and can be captured in logs.
 
-### Other places use URL authorization. Why isn't it secure for Clover?
+#### Other places use URL authorization. Why isn't it secure for Clover?
 URL authorization is more secure when using one-time access tokens or other tokens that expire quickly. Clover tokens are currently too long-lived for us to be comfortable continuing to offer URL authorization.
 
-### What will happen if an app is still using URL authorization once the access_token parameter is sunset?
-Any API request that still uses the access_token query parameter after the sunset date will return a 401 Unauthorized response.
+#### What will happen if an app is still using URL authorization once the `access_token` parameter is sunset?
+Any API request that still uses the `access_token` query parameter after the sunset date will return a 401 Unauthorized response.
 
-### "By the end of January" is a little vague. When's the actual sunset date?
+#### "By the end of January" is a little vague. When's the actual sunset date?
 (This has been updated. If developers still mention the "end of January" date from our earlier communications, you can let them know there's been an extension to provide them a little more time.)
 
 Our current timeline is as follows:
 
-- **January 12, 2022**: access_token sunset in Sandbox
-- **February 28, 2022**: access_token sunset in Production
+- **January 12, 2022**: `access_token` sunset in Sandbox
+- **February 28, 2022**: `access_token` sunset in Production
 
-### How can I switch to approved authorization methods?
-Ensure you are using server-side requests as outlined in our Using API tokens documentation. Instead of using the access_token URL parameter, use the Authorization header on your requests.
+#### How can I switch to approved authorization methods?
+Ensure you are using server-side requests as outlined in our Using API tokens documentation. Instead of using the `access_token` URL parameter, use the Authorization header on your requests.
 
-### I use CORS and can't use Authorization headers. How can my app continue to make requests after this deprecation goes through?
+#### I use CORS and can't use Authorization headers. How can my app continue to make requests after this deprecation goes through?
 We identified issues with using the Authorization header with CORS. Our engineering teams have deployed a fix to address this in all environments now. You should be good to go ahead and use Authorization: Bearer headers on your CORS requests.
 
-### Your docs/example app/YouTube video/other resource still uses the access_token parameter! Why's that?
+#### Your docs/example app/YouTube video/other resource still uses the `access_token` parameter! Why's that?
 Thank you for bringing this to our attention. We're in the process of updating our developer resources and will make sure this one is on the list.
 
-### Can I be an exception for this deprecation?
+#### Can I be an exception for this deprecation?
 We are not able to offer case-by-case exceptions for this deprecation. 
 If you feel you would be negatively impacted by this deprecation or would not be able to meet the cutoff date, we'd be interested in hearing details about your use case. 
 We will let our engineering and security teams know about your situation to help inform their product decisions.
 
-## Internal FAQs
+### Internal FAQs
 
-### How many developers will be affected by this change?
+#### How many developers will be affected by this change?
 We were able to find 251 unique apps using the `access_token` parameter over a month's timespan. 
 There may be more developers using merchant tokens that we're unaware of.
 
-### How can I tell if a specific developer is affected by this change?
+#### How can I tell if a specific developer is affected by this change?
 You can check in Kibana whether any of the developer's apps have used the `access_token` URL parameter recently. 
 To do so, you can:
 
