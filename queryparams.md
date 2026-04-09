@@ -49,11 +49,7 @@ Header:
 
 ```
 Authorization: Bearer <<authToken>>
-Cookie: _ga=GA1.2.400426771.1588356098; _hp2_id.12
-22pageviewId%22%3A%222946885056905627%22%2C%22ses
-22trackerVersion%22%3A%224.0%22%7D; wm-cseu-id=%22
-be50-46e3-88f6-dbe2e4166503%22; wm_ct_0_a3ae97b8b
-[{%22t%22:175445%2C%22td%22:null%2C%22c%22:0%2C%2
+Cookie: <<cookieId>>
 ```
 
 Body:
