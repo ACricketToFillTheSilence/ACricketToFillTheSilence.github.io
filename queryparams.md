@@ -44,14 +44,14 @@ https://apisandbox.dev.clover.com/v3/merchants/<<merchantUuid>>/customers/
 
 Because the header belongs to HTTP, it uses different formatting.
 
-Header:
+**Header**:
 
 ```
 Authorization: Bearer <<authToken>>
 Cookie: <<cookieId>>
 ```
 
-Body:
+**Body**:
 
 ```
 {
@@ -61,7 +61,7 @@ Body:
 
 
 
-If the developer decided that they'd rather send in the auth token using a URL parameter, the URL would become this: 
+If the developer sends the auth token in a URL parameter, the URL becomes the following: 
 
 ```
 https://apisandbox.dev.clover.com/v3/merchants/<<merchantUuid>>/customers/?access_token=<<authToken>>
