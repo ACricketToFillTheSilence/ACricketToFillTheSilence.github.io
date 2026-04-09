@@ -13,7 +13,7 @@ This high-level view will be unpacked below.
 
 When a third-party developer sends in a request for data, they do so using JSON files. The HTTP for JSON includes many things; the two important elements here are the body and the header.
 
-![]()
+<!--![]()-->
 
 The body includes all the data going back and forth between computers. 
 If we're creating a Customer, for instance, the body would include details like the customer's name, phone number, email address, and birthday.
