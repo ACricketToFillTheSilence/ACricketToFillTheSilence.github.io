@@ -13,7 +13,7 @@ I position the change as a benefit to new apps to increase developer sentiment a
 This blog announces Fiserv's addition of a credit surcharge program for Clover merchants and explains how this update impacts cash discount apps.
 I offer guidance about how to avoid breaking credit card compliance by making a simple SDK call for each merchant.
 
-### [Removing Auth Tokens from URL Parameters](queryparams.html)
+### [Remove Auth Tokens from URL Parameters](queryparams.html)
 
 I wrote this topic for internal members of the Developer Relations team to explain authorization tokens in calls to Clover's REST APIs. 
 At the time, developers authenticated their calls by adding the auth token as a query parameter to the URL.
